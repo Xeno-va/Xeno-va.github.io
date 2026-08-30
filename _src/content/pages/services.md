@@ -5,14 +5,12 @@ description: Hardware from concept to production — mechanical, electronics, fi
 ---
 
 Xenova Systems is a hardware R&D and product engineering company. We take
-systems from concept through to production — architecture, mechanical design,
-electronics, firmware, host software and manufacturing — held under single
-ownership rather than split across specialists who each hold one layer.
+systems from concept through to production: architecture, mechanical design,
+electronics, firmware, host software and manufacturing.
 
-That breadth is deliberate. Hardware programs usually fail at the seams between
-domains: an enclosure that cannot be tooled, a sensor the firmware cannot read
-cleanly, a design that works and cannot be built at the price it needs to hit.
-Owning every layer means those interfaces get decided rather than negotiated.
+Design and build happen under one roof. The electronics lab, machine shop and
+print farm are in house, so a change gets cut, printed, assembled and on the
+bench the same day rather than going out to a vendor and coming back next week.
 
 ## What we do
 
@@ -43,6 +41,21 @@ service.
 manufacturer management and supply chain. Patent drafting, freedom-to-operate
 analysis, and publish-versus-patent strategy decided alongside the engineering
 rather than after it.
+
+## The shop
+
+**Fabrication.** A 4 × 8 ft CNC router with full sheet capacity, a benchtop CNC
+router, CO₂ and fiber lasers, a print farm running FDM and resin, and vinyl
+cutting. Tooling, fixtures and enclosures are made here.
+
+**Electronics.** A full bench: oscilloscopes, logic analyzers, spectrum and
+vector network analysis, programmable loads and supplies, variacs and isolation
+transformers, thermal imaging. SMD assembly, rework and bring-up in house.
+
+**Small-scale manufacturing.** One-off prototypes through low-volume production
+runs, built, assembled and tested here. Short runs do not have to justify a
+contract manufacturer's minimums, and a design revision does not cost a
+tooling cycle.
 
 ## How we engage
 
