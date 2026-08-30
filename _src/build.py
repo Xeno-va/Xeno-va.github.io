@@ -323,6 +323,7 @@ ENQUIRY_FORM = """
         <span>What is the enquiry about?</span>
         <select name="topic">
           <option>A system that needs building</option>
+          <option>Research collaboration</option>
           <option>Something published here</option>
           <option>Partnership or investment</option>
           <option>Something else</option>
@@ -332,7 +333,7 @@ ENQUIRY_FORM = """
       <label>
         <span>What has to happen, and what constrains it?</span>
         <textarea name="message" rows="7" required
-          placeholder="What the system has to do, where it has to do it, and what limits it — budget, timeline, environment, regulatory context. Rough is fine."></textarea>
+          placeholder="If it is a project: what the system has to do, where it has to do it, and what limits it. Anything else, just say what is on your mind."></textarea>
       </label>
 
       <button type="submit" class="btn primary">Send enquiry</button>

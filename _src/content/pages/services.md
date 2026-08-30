@@ -49,9 +49,9 @@ analysis on systems that pass every test and still fail in service.
 ### Manufacturing and IP
 
 Design for manufacture and assembly, contract manufacturer management and
-supply chain. Patent drafting, freedom-to-operate analysis and
-publish-versus-patent strategy, decided alongside the engineering rather than
-after it.
+supply chain. We hold multiple patents, and can advise on the freedom-to-operate
+and patenting process and on whether a result is better published or protected —
+questions worth settling alongside the engineering rather than after it.
 
 ## Engagements
 
