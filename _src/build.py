@@ -10,6 +10,7 @@ from pathlib import Path
 
 import markdown
 import yaml
+from PIL import Image
 
 SRC = Path(__file__).parent
 ROOT = SRC.parent
@@ -72,6 +73,61 @@ def kind_of(p):
 
 def url_of(p):
     return f"/{kind_of(p)['dir']}/{p['slug']}/"
+
+
+RASTER = {".jpg", ".jpeg", ".png", ".gif", ".webp", ".bmp", ".tif", ".tiff"}
+
+
+def strip_image(src, dst):
+    """Re-encode an image so only pixels survive — no EXIF, no GPS, no ICC,
+    no PNG text chunks, no camera serial, no timestamps."""
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    ext = src.suffix.lower()
+
+    if ext == ".svg":
+        text = src.read_text(encoding="utf-8", errors="replace")
+        text = re.sub(r"(?is)<metadata\b.*?</metadata>", "", text)
+        text = re.sub(r"(?is)<!--.*?-->", "", text)
+        dst.write_text(text, encoding="utf-8")
+        return
+
+    if ext not in RASTER:
+        raise SystemExit(f"refusing to publish {src.name}: unknown image type")
+
+    with Image.open(src) as im:
+        im.load()
+        clean = Image.frombytes(im.mode, im.size, im.tobytes())
+        if ext in {".jpg", ".jpeg"}:
+            clean.save(dst, "JPEG", quality=92, optimize=True,
+                       exif=b"", icc_profile=None)
+        elif ext == ".png":
+            clean.save(dst, "PNG", optimize=True, pnginfo=None, icc_profile=None)
+        else:
+            clean.save(dst, icc_profile=None)
+
+
+def audit_images(root):
+    """Refuse to finish a build if anything PUBLISHED still carries metadata.
+    The source folder is skipped — originals keep their metadata on purpose."""
+    bad = []
+    for f in sorted(root.rglob("*")):
+        if not f.is_file() or f.suffix.lower() not in RASTER:
+            continue
+        if SRC in f.parents:
+            continue
+        with Image.open(f) as im:
+            leftovers = {k: v for k, v in (im.info or {}).items()
+                         if k not in {"dpi", "transparency", "gamma", "srgb",
+                                      "aspect", "compression", "interlace",
+                                      "jfif", "jfif_version", "jfif_unit",
+                                      "jfif_density", "loop", "duration",
+                                      "version", "background"}}
+            if hasattr(im, "getexif") and dict(im.getexif()):
+                leftovers["exif"] = "present"
+        if leftovers:
+            bad.append(f"{f.relative_to(root)}: {sorted(leftovers)}")
+    if bad:
+        raise SystemExit("METADATA STILL PRESENT — not publishing:\n  " + "\n  ".join(bad))
 
 
 # hexagon with an inscribed X — inlined so it works without an extra request
@@ -424,10 +480,24 @@ def main():
     shutil.copytree(SRC / "assets", ROOT / "assets", dirs_exist_ok=True)
     written += sorted((ROOT / "assets").rglob("*"))
 
+    # every image is re-encoded on the way out — pixels only
+    src_images = SRC / "images"
+    if (ROOT / "images").exists():
+        shutil.rmtree(ROOT / "images")
+    n_img = 0
+    if src_images.exists():
+        for f in sorted(src_images.rglob("*")):
+            if f.is_file():
+                strip_image(f, ROOT / "images" / f.relative_to(src_images))
+                n_img += 1
+        written += sorted((ROOT / "images").rglob("*"))
+    audit_images(ROOT)
+
     manifest.write_text(
         "\n".join(str(w.relative_to(ROOT)) for w in written if w.is_file()) + "\n")
 
-    print(f"built {len(written)} files, {len(projects)} projects, {len(pages)} pages")
+    print(f"built {len(written)} files, {len(projects)} posts, {len(pages)} pages, "
+          f"{n_img} images stripped and audited clean")
     for w in written:
         print("  ", w.relative_to(ROOT))
     return 0

@@ -5,7 +5,7 @@ cd "$(dirname "$0")"
 
 if [ ! -x .venv/bin/python ]; then
   uv venv .venv
-  VIRTUAL_ENV="$PWD/.venv" uv pip install markdown pyyaml
+  VIRTUAL_ENV="$PWD/.venv" uv pip install markdown pyyaml pillow
 fi
 
 ./.venv/bin/python _src/build.py

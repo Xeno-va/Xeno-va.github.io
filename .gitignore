@@ -1,3 +1,7 @@
 .venv/
 __pycache__/
 *.pyc
+
+# Original images keep their metadata. Only the stripped copies under images/
+# are ever committed or published.
+_src/images/
