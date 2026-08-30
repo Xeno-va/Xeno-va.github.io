@@ -1,63 +1,59 @@
 ---
 title: Services
 slug: services
-description: Hardware from concept to production — mechanical, electronics, firmware, software and manufacturing under single ownership.
+lede: From requirements to a manufacturable product, without handing your program between vendors.
+description: Hardware R&D and product engineering — electronics, mechanical, firmware, software and manufacturing, run end to end.
 ---
 
 Xenova Systems is a hardware R&D and product engineering company. We take
 systems from concept through to production: architecture, mechanical design,
 electronics, firmware, host software and manufacturing.
 
-Design and build happen under one roof. The electronics lab, machine shop and
-print farm are in house, so a change gets cut, printed, assembled and on the
-bench the same day rather than going out to a vendor and coming back next week.
+Development runs in house. Design, fabrication, electronics assembly and test
+sit under one roof, which shortens the loop between a change and a tested part
+and keeps short production runs viable without a contract manufacturer.
 
-## What we do
+## Capabilities
 
-**Electronics and embedded systems.** Mixed-signal and low-noise analog. Power
-architecture from microamp budgets through high-current rails, including battery,
-supercapacitor and charging systems, and high-voltage switching. Firmware in
-C/C++ on ARM microcontrollers, bare metal. Telemetry over serial, CAN, Ethernet,
-BLE, ultra-wideband, LoRa, cellular, satellite and GNSS.
+### Electronics and embedded systems
 
-**Mechanical design and fabrication.** Mechanism and linkage design, pneumatics,
-enclosures, fixtures and tooling. Design for long unattended deployment —
-potting, sealing and material selection against environmental attack. CNC
-milling, laser cutting and additive manufacturing in house.
+Mixed-signal and low-noise analog, and power architecture from microamp budgets
+through high-current rails. Bare-metal firmware in C/C++ on ARM
+microcontrollers. Telemetry over serial, CAN, Ethernet, BLE, ultra-wideband,
+LoRa, cellular, satellite and GNSS.
 
-**Automation and motion.** Automated production machinery, closed-loop motion
-control, multi-axis machine design, and the handling mechanisms around them.
+### Mechanical design and fabrication
 
-**Software, vision and machine learning.** Control backends, operator consoles
-and hardware-in-the-loop automation. Computer vision and visual tracking.
-Model training and deployment for on-device inference under power and memory
-constraint.
+Mechanism and linkage design, pneumatics, enclosures, fixtures and tooling.
+Design for long unattended deployment, including potting, sealing and material
+selection against environmental attack. Machining, laser cutting and additive
+manufacturing are done in house.
 
-**Test and measurement.** Custom automated benches and fixtures, bring-up, bench
-debug, and root-cause analysis on systems that pass every test and still fail in
-service.
+### Automation and motion control
 
-**Manufacturing and IP.** Design for manufacture and assembly, contract
-manufacturer management and supply chain. Patent drafting, freedom-to-operate
-analysis, and publish-versus-patent strategy decided alongside the engineering
-rather than after it.
+Automated production machinery, closed-loop motion control, multi-axis machine
+design, and the handling mechanisms around them. Built to run in production
+rather than to demonstrate.
 
-## The shop
+### Software, vision and machine learning
 
-**Fabrication.** A 4 × 8 ft CNC router with full sheet capacity, a benchtop CNC
-router, CO₂ and fiber lasers, a print farm running FDM and resin, and vinyl
-cutting. Tooling, fixtures and enclosures are made here.
+Control backends, operator consoles and hardware-in-the-loop automation.
+Computer vision and visual tracking. Model training and deployment for on-device
+inference under power and memory constraint.
 
-**Electronics.** A full bench: oscilloscopes, logic analyzers, spectrum and
-vector network analysis, programmable loads and supplies, variacs and isolation
-transformers, thermal imaging. SMD assembly, rework and bring-up in house.
+### Test and measurement
 
-**Small-scale manufacturing.** One-off prototypes through low-volume production
-runs, built, assembled and tested here. Short runs do not have to justify a
-contract manufacturer's minimums, and a design revision does not cost a
-tooling cycle.
+Custom automated benches and fixtures, bring-up and bench debug. Root-cause
+analysis on systems that pass every test and still fail in service.
 
-## How we engage
+### Manufacturing and IP
+
+Design for manufacture and assembly, contract manufacturer management and
+supply chain. Patent drafting, freedom-to-operate analysis and
+publish-versus-patent strategy, decided alongside the engineering rather than
+after it.
+
+## Engagements
 
 **Whole program.** Requirements definition through first working article and
 into production, with one point of ownership across every domain.
@@ -76,20 +72,20 @@ experiment that would prove it is not.
 ## Who we work with
 
 - Companies building physical products without an in-house engineering team
-- Research groups and universities that need instrumentation which does not exist commercially, or does not exist at a price the work can carry
+- Research groups and universities needing instrumentation that does not exist commercially, or does not exist at a price the work can carry
 - Operators whose revenue depends on what a machine measures or reports
 - Deep-tech and frontier teams where the hard part of the problem is physical
 
 ## Who we do not work with
 
-- Programs where the engineering is already specified and the work is execution. If every decision has been made, this is not the right shop.
-- Software-only work — apps, websites, or dashboards over hardware somebody else built.
-- Organisations with a procurement layer between the problem and the person who owns it.
+- Programs where the engineering is already specified and the work is execution
+- Software-only work — apps, websites, or dashboards over hardware built elsewhere
+- Organisations with a procurement layer between the problem and the person who owns it
 
 ## Confidentiality
 
 Client work is confidential by default. Nothing about an engagement — the
-client, the product, the results — is published, referenced or shown without
+client, the product or the results — is published, referenced or shown without
 written approval. Everything published on this site is our own work.
 
 [Start with a feasibility conversation.](/contact/)

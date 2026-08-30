@@ -286,12 +286,14 @@ ENQUIRY_FORM = """
 
 def page_page(site, pg):
     body = render_md(pg["body"])
+    lede = f'<p class="lede">{e(pg["lede"])}</p>' if pg.get("lede") else ""
     if pg.get("form"):
         body += ENQUIRY_FORM.format(
             key=e(site.get("form_key", "")), name=e(site["name"]))
     return f"""<article class="doc">
   <div class="wrap narrow">
     <h1>{e(pg['title'])}</h1>
+    {lede}
     <div class="prose">
 {body}
     </div>
