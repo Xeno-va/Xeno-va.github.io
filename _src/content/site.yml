@@ -4,8 +4,8 @@ url: https://xeno-va.github.io
 custom_domain: false
 form_key: PLACEHOLDER-REPLACE-WITH-WEB3FORMS-KEY
 description: >-
-  Custom PCBs, firmware and host software for embedded instrumentation — remote
-  sensing, embedded AI, localization and control.
+  Hardware R&D and product engineering. Mechanical, electronics, firmware,
+  software and manufacturing, from concept through to production.
 
 nav:
   - { label: Work, href: /work/ }
@@ -13,13 +13,12 @@ nav:
   - { label: Contact, href: /contact/ }
 
 home:
-  headline: Embedded hardware for instruments that leave the lab
+  headline: Hardware from concept to production
   subtext: >-
-    Custom PCBs, firmware and the software that talks to them — remote sensing,
-    embedded AI, localization and control. Feasibility through to manufacturing
-    files.
+    Architecture, mechanical design, electronics, firmware, host software and
+    manufacturing — held under single ownership rather than split across
+    specialists.
 
   summary: >-
-    Most of the work here is instrumentation that has to run unattended, on a
-    power budget, somewhere without infrastructure. Some of it is built for
-    clients; some of it is built to become a product.
+    Xenova Systems is a hardware R&D and product engineering company. Client
+    work is confidential by default; the projects published here are our own.

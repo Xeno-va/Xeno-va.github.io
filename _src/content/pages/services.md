@@ -1,65 +1,82 @@
 ---
 title: Services
 slug: services
-description: Custom electronics, firmware and software — what gets built here and who it is built for.
+description: Hardware from concept to production — mechanical, electronics, firmware, software and manufacturing under single ownership.
 ---
 
-Xenova Systems designs and builds embedded hardware: custom PCBs, firmware, and
-the software that talks to them. Most of the work is instrumentation that has to
-survive outside a lab.
+Xenova Systems is a hardware R&D and product engineering company. We take
+systems from concept through to production — architecture, mechanical design,
+electronics, firmware, host software and manufacturing — held under single
+ownership rather than split across specialists who each hold one layer.
 
-## What gets built
+That breadth is deliberate. Hardware programs usually fail at the seams between
+domains: an enclosure that cannot be tooled, a sensor the firmware cannot read
+cleanly, a design that works and cannot be built at the price it needs to hit.
+Owning every layer means those interfaces get decided rather than negotiated.
 
-**Embedded systems and custom PCBs.** Sensor front ends, low-power and
-energy-harvesting designs, mixed-signal boards, motor and actuator control.
+## What we do
 
-**Remote sensing and field instrumentation.** IoT nodes for places with no grid,
-no cell coverage and nobody visiting — LoRa and satellite backhaul, multi-year
-power budgets, enclosures that survive humidity, flooding and heat.
+**Electronics and embedded systems.** Mixed-signal and low-noise analog. Power
+architecture from microamp budgets through high-current rails, including battery,
+supercapacitor and charging systems, and high-voltage switching. Firmware in
+C/C++ on ARM microcontrollers, bare metal. Telemetry over serial, CAN, Ethernet,
+BLE, ultra-wideband, LoRa, cellular, satellite and GNSS.
 
-**Embedded AI.** On-device classification where bandwidth, latency or power
-rules out sending raw data anywhere. Audio, vision and vibration inference on
-microcontrollers.
+**Mechanical design and fabrication.** Mechanism and linkage design, pneumatics,
+enclosures, fixtures and tooling. Design for long unattended deployment —
+potting, sealing and material selection against environmental attack. CNC
+milling, laser cutting and additive manufacturing in house.
 
-**Localization and closed-loop control.** Pose estimation, tracking, and control
-loops running on real hardware with real latency and real backlash.
+**Automation and motion.** Automated production machinery, closed-loop motion
+control, multi-axis machine design, and the handling mechanisms around them.
 
-**Metering and machine telemetry.** Usage-based billing, cycle counting, and
-counts that have to hold up when they are the invoice.
+**Software, vision and machine learning.** Control backends, operator consoles
+and hardware-in-the-loop automation. Computer vision and visual tracking.
+Model training and deployment for on-device inference under power and memory
+constraint.
 
-**Host software and internal tooling.** The interface, the data pipeline, and
-tools built for teams who do not have developers.
+**Test and measurement.** Custom automated benches and fixtures, bring-up, bench
+debug, and root-cause analysis on systems that pass every test and still fail in
+service.
 
-## What a project covers
+**Manufacturing and IP.** Design for manufacture and assembly, contract
+manufacturer management and supply chain. Patent drafting, freedom-to-operate
+analysis, and publish-versus-patent strategy decided alongside the engineering
+rather than after it.
 
-Feasibility, schematic capture, PCB layout, firmware, host software, bring-up,
-test fixtures, and manufacturing files. Design for manufacture is aimed at tens
-to thousands of units — the volume most of this work actually ships at — rather
-than at consumer scale.
+## How we engage
 
-Projects can also start mid-stream: a design that works on the bench and fails
-in the field, a board that needs a respin for cost, or a measurement rig to
-settle whether an approach works before more money goes into it.
+**Whole program.** Requirements definition through first working article and
+into production, with one point of ownership across every domain.
 
-## Who this is for
+**A subsystem.** A board, a mechanism, a firmware stack or a control system
+inside a program somebody else is running.
 
-- Research groups whose sample size is limited by what commercial instruments cost
-- Operators whose revenue depends on a number a machine reports
-- Hardware startups and small manufacturers with no in-house electronics engineer
-- Conservation, agriculture and environmental monitoring deploying where there is no infrastructure
+**Diagnosis and recovery.** A system that works on the bench and fails in the
+field. A design that cannot be built at the price it needs. A measurement
+nobody trusts.
 
-## Who this is not for
+**Feasibility.** Scoped and priced on its own, before design money is
+committed: whether the thing is possible, what it would cost, and the cheapest
+experiment that would prove it is not.
 
-- Executing a specification somebody else has already written. If the hard
-  decisions are made, this is not the right shop.
-- Apps, websites, or dashboards over someone else's hardware.
-- Organisations with a procurement layer between the problem and the person who has it.
-- Work that can never be discussed publicly in any form.
+## Who we work with
 
-## How it starts
+- Companies building physical products without an in-house engineering team
+- Research groups and universities that need instrumentation which does not exist commercially, or does not exist at a price the work can carry
+- Operators whose revenue depends on what a machine measures or reports
+- Deep-tech and frontier teams where the hard part of the problem is physical
 
-Feasibility first, as its own piece of work: what it would cost, whether it is
-possible, and the cheapest experiment that would prove it is not. That comes
-before anyone commits to a design, and it is priced and scoped on its own.
+## Who we do not work with
 
-[Start there.](/contact/)
+- Programs where the engineering is already specified and the work is execution. If every decision has been made, this is not the right shop.
+- Software-only work — apps, websites, or dashboards over hardware somebody else built.
+- Organisations with a procurement layer between the problem and the person who owns it.
+
+## Confidentiality
+
+Client work is confidential by default. Nothing about an engagement — the
+client, the product, the results — is published, referenced or shown without
+written approval. Everything published on this site is our own work.
+
+[Start with a feasibility conversation.](/contact/)

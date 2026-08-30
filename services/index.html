@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Services — Xenova Systems</title>
-<meta name="description" content="Custom electronics, firmware and software — what gets built here and who it is built for.">
+<meta name="description" content="Hardware from concept to production — mechanical, electronics, firmware, software and manufacturing under single ownership.">
 <link rel="canonical" href="https://xeno-va.github.io/services/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Services — Xenova Systems">
-<meta property="og:description" content="Custom electronics, firmware and software — what gets built here and who it is built for.">
+<meta property="og:description" content="Hardware from concept to production — mechanical, electronics, firmware, software and manufacturing under single ownership.">
 <meta property="og:url" content="https://xeno-va.github.io/services/">
 <meta property="og:site_name" content="Xenova Systems">
 <meta name="twitter:card" content="summary">
@@ -38,52 +38,66 @@
   <div class="wrap narrow">
     <h1>Services</h1>
     <div class="prose">
-<p>Xenova Systems designs and builds embedded hardware: custom PCBs, firmware, and
-the software that talks to them. Most of the work is instrumentation that has to
-survive outside a lab.</p>
-<h2 id="what-gets-built">What gets built</h2>
-<p><strong>Embedded systems and custom PCBs.</strong> Sensor front ends, low-power and
-energy-harvesting designs, mixed-signal boards, motor and actuator control.</p>
-<p><strong>Remote sensing and field instrumentation.</strong> IoT nodes for places with no grid,
-no cell coverage and nobody visiting — LoRa and satellite backhaul, multi-year
-power budgets, enclosures that survive humidity, flooding and heat.</p>
-<p><strong>Embedded AI.</strong> On-device classification where bandwidth, latency or power
-rules out sending raw data anywhere. Audio, vision and vibration inference on
-microcontrollers.</p>
-<p><strong>Localization and closed-loop control.</strong> Pose estimation, tracking, and control
-loops running on real hardware with real latency and real backlash.</p>
-<p><strong>Metering and machine telemetry.</strong> Usage-based billing, cycle counting, and
-counts that have to hold up when they are the invoice.</p>
-<p><strong>Host software and internal tooling.</strong> The interface, the data pipeline, and
-tools built for teams who do not have developers.</p>
-<h2 id="what-a-project-covers">What a project covers</h2>
-<p>Feasibility, schematic capture, PCB layout, firmware, host software, bring-up,
-test fixtures, and manufacturing files. Design for manufacture is aimed at tens
-to thousands of units — the volume most of this work actually ships at — rather
-than at consumer scale.</p>
-<p>Projects can also start mid-stream: a design that works on the bench and fails
-in the field, a board that needs a respin for cost, or a measurement rig to
-settle whether an approach works before more money goes into it.</p>
-<h2 id="who-this-is-for">Who this is for</h2>
+<p>Xenova Systems is a hardware R&amp;D and product engineering company. We take
+systems from concept through to production — architecture, mechanical design,
+electronics, firmware, host software and manufacturing — held under single
+ownership rather than split across specialists who each hold one layer.</p>
+<p>That breadth is deliberate. Hardware programs usually fail at the seams between
+domains: an enclosure that cannot be tooled, a sensor the firmware cannot read
+cleanly, a design that works and cannot be built at the price it needs to hit.
+Owning every layer means those interfaces get decided rather than negotiated.</p>
+<h2 id="what-we-do">What we do</h2>
+<p><strong>Electronics and embedded systems.</strong> Mixed-signal and low-noise analog. Power
+architecture from microamp budgets through high-current rails, including battery,
+supercapacitor and charging systems, and high-voltage switching. Firmware in
+C/C++ on ARM microcontrollers, bare metal. Telemetry over serial, CAN, Ethernet,
+BLE, ultra-wideband, LoRa, cellular, satellite and GNSS.</p>
+<p><strong>Mechanical design and fabrication.</strong> Mechanism and linkage design, pneumatics,
+enclosures, fixtures and tooling. Design for long unattended deployment —
+potting, sealing and material selection against environmental attack. CNC
+milling, laser cutting and additive manufacturing in house.</p>
+<p><strong>Automation and motion.</strong> Automated production machinery, closed-loop motion
+control, multi-axis machine design, and the handling mechanisms around them.</p>
+<p><strong>Software, vision and machine learning.</strong> Control backends, operator consoles
+and hardware-in-the-loop automation. Computer vision and visual tracking.
+Model training and deployment for on-device inference under power and memory
+constraint.</p>
+<p><strong>Test and measurement.</strong> Custom automated benches and fixtures, bring-up, bench
+debug, and root-cause analysis on systems that pass every test and still fail in
+service.</p>
+<p><strong>Manufacturing and IP.</strong> Design for manufacture and assembly, contract
+manufacturer management and supply chain. Patent drafting, freedom-to-operate
+analysis, and publish-versus-patent strategy decided alongside the engineering
+rather than after it.</p>
+<h2 id="how-we-engage">How we engage</h2>
+<p><strong>Whole program.</strong> Requirements definition through first working article and
+into production, with one point of ownership across every domain.</p>
+<p><strong>A subsystem.</strong> A board, a mechanism, a firmware stack or a control system
+inside a program somebody else is running.</p>
+<p><strong>Diagnosis and recovery.</strong> A system that works on the bench and fails in the
+field. A design that cannot be built at the price it needs. A measurement
+nobody trusts.</p>
+<p><strong>Feasibility.</strong> Scoped and priced on its own, before design money is
+committed: whether the thing is possible, what it would cost, and the cheapest
+experiment that would prove it is not.</p>
+<h2 id="who-we-work-with">Who we work with</h2>
 <ul>
-<li>Research groups whose sample size is limited by what commercial instruments cost</li>
-<li>Operators whose revenue depends on a number a machine reports</li>
-<li>Hardware startups and small manufacturers with no in-house electronics engineer</li>
-<li>Conservation, agriculture and environmental monitoring deploying where there is no infrastructure</li>
+<li>Companies building physical products without an in-house engineering team</li>
+<li>Research groups and universities that need instrumentation which does not exist commercially, or does not exist at a price the work can carry</li>
+<li>Operators whose revenue depends on what a machine measures or reports</li>
+<li>Deep-tech and frontier teams where the hard part of the problem is physical</li>
 </ul>
-<h2 id="who-this-is-not-for">Who this is not for</h2>
+<h2 id="who-we-do-not-work-with">Who we do not work with</h2>
 <ul>
-<li>Executing a specification somebody else has already written. If the hard
-  decisions are made, this is not the right shop.</li>
-<li>Apps, websites, or dashboards over someone else&rsquo;s hardware.</li>
-<li>Organisations with a procurement layer between the problem and the person who has it.</li>
-<li>Work that can never be discussed publicly in any form.</li>
+<li>Programs where the engineering is already specified and the work is execution. If every decision has been made, this is not the right shop.</li>
+<li>Software-only work — apps, websites, or dashboards over hardware somebody else built.</li>
+<li>Organisations with a procurement layer between the problem and the person who owns it.</li>
 </ul>
-<h2 id="how-it-starts">How it starts</h2>
-<p>Feasibility first, as its own piece of work: what it would cost, whether it is
-possible, and the cheapest experiment that would prove it is not. That comes
-before anyone commits to a design, and it is priced and scoped on its own.</p>
-<p><a href="/contact/">Start there.</a></p>
+<h2 id="confidentiality">Confidentiality</h2>
+<p>Client work is confidential by default. Nothing about an engagement — the
+client, the product, the results — is published, referenced or shown without
+written approval. Everything published on this site is our own work.</p>
+<p><a href="/contact/">Start with a feasibility conversation.</a></p>
     </div>
   </div>
 </article>
