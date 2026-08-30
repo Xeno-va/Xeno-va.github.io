@@ -301,6 +301,7 @@ ENQUIRY_FORM = """
       <input type="hidden" name="access_key" value="{key}">
       <input type="hidden" name="subject" value="Enquiry from {name}">
       <input type="hidden" name="from_name" value="{name}">
+      <input type="hidden" name="redirect" value="{site_url}/thanks/">
       <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
 
       <div class="row">
@@ -347,7 +348,8 @@ def page_page(site, pg):
     lede = f'<p class="lede">{e(pg["lede"])}</p>' if pg.get("lede") else ""
     if pg.get("form"):
         body += ENQUIRY_FORM.format(
-            key=e(site.get("form_key", "")), name=e(site["name"]))
+            key=e(site.get("form_key", "")), name=e(site["name"]),
+            site_url=e(site["url"].rstrip("/")))
     return f"""<article class="doc">
   <div class="wrap narrow">
     <h1>{e(pg['title'])}</h1>

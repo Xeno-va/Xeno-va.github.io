@@ -2,6 +2,7 @@ index.html
 work/index.html
 contact/index.html
 services/index.html
+thanks/index.html
 feed.xml
 sitemap.xml
 robots.txt
