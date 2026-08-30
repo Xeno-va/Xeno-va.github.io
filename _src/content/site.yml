@@ -4,8 +4,8 @@ url: https://xenovasys.com
 custom_domain: true
 form_key: PLACEHOLDER-REPLACE-WITH-WEB3FORMS-KEY
 description: >-
-  Hardware R&D and product engineering. Mechanical, electronics, firmware,
-  software and manufacturing, from concept through to production.
+  Hardware from concept to production. Mechanical, electronics, firmware,
+  software and manufacturing in one place.
 
 nav:
   - { label: Work, href: /work/ }
@@ -19,5 +19,7 @@ home:
     so a program doesn't stall in the gaps between vendors.
 
   summary: >-
-    Xenova Systems is a hardware R&D and product engineering company. Client
-    work is confidential by default; the projects published here are our own.
+    Xenova Systems builds instruments, machines and the electronics inside them
+    — for companies with no engineering team of their own, research groups
+    priced out of commercial equipment, and operators whose revenue depends on
+    what a machine measures.

@@ -1,12 +1,12 @@
 ---
 title: Contact
 slug: contact
-description: Make an enquiry about a system, a published project, or a partnership.
+lede: Tell us what the system has to do and what limits it.
+description: Get in touch about a project, a published write-up, or a partnership.
 form: true
 ---
 
-For project work, collaboration, or questions about anything published here.
-
-Useful things to include: what the system has to do, where it has to do it, and
-what constrains it. A constraint stated early is worth more than a specification
-written late.
+Budget, timeline, environment, regulatory context — a constraint stated early
+is worth more than a specification written late. Rough is fine; if the shape of
+the problem is clear, we can tell you quickly whether it is something we should
+take on.

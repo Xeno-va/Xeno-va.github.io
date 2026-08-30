@@ -195,7 +195,7 @@ def shell(site, *, title, description, body, path, extra_class=""):
 <footer class="site-foot">
   <div class="wrap foot-inner">
     <p>&copy; {datetime.now().year} {e(site['name'])}</p>
-    <p><a href="/contact/">Make an enquiry</a></p>
+    <p><a href="/contact/">Contact</a></p>
   </div>
 </footer>
 </body>
@@ -208,11 +208,11 @@ def home(site, posts):
     if posts:
         work_band = f"""<section class="band alt">
   <div class="wrap">
-    <h2 class="eyebrow">Recent</h2>
+    <h2 class="eyebrow">Recent work</h2>
     <div class="teasers">
 {chr(10).join(teaser(p) for p in posts[:3])}
     </div>
-    <p class="more"><a href="/work/">Everything published &rarr;</a></p>
+    <p class="more"><a href="/work/">Everything we have published &rarr;</a></p>
   </div>
 </section>"""
     else:
@@ -222,8 +222,8 @@ def home(site, posts):
     <h1>{e(h['headline'])}</h1>
     <p class="lede">{e(h['subtext'])}</p>
     <p class="actions">
-      <a class="btn primary" href="/contact/">Make an enquiry</a>
-      <a class="btn" href="/services/">What gets built</a>
+      <a class="btn primary" href="/contact/">Start a conversation</a>
+      <a class="btn" href="/services/">What we do</a>
     </p>
   </div>
 </section>
@@ -231,7 +231,7 @@ def home(site, posts):
 <section class="band">
   <div class="wrap narrow">
     <p class="standfirst">{e(h['summary'])}</p>
-    <p class="more"><a href="/services/">What gets built, and who it is for &rarr;</a></p>
+    <p class="more"><a href="/services/">What we do, and who we work with &rarr;</a></p>
   </div>
 </section>
 
@@ -256,15 +256,16 @@ def projects_index(site, projects):
     </div>"""
     else:
         inner = """    <div class="empty">
-      <p>Nothing published here yet.</p>
-      <p>Work in progress is written up as it goes and posted when it stands on
-      its own. Some systems are internal and stay that way.</p>
-      <p><a href="/contact/">Ask about current work &rarr;</a></p>
+      <p>Nothing published yet.</p>
+      <p>Work gets written up once it is finished enough to be useful to
+      somebody else. Client work is never published, and some of our own stays
+      internal.</p>
+      <p><a href="/contact/">Ask what we are working on &rarr;</a></p>
     </div>"""
     return f"""<section class="page-head">
   <div class="wrap">
     <h1>Work</h1>
-    <p class="lede">Finished builds and lab notes, newest first — including the routes that did not work out.</p>
+    <p class="lede">Build logs and write-ups, newest first.</p>
   </div>
 </section>
 <section class="band">
@@ -472,9 +473,11 @@ def main():
     # 404
     written.append(write(ROOT / "404.html", shell(
         site, title="Not found", description="Page not found.",
-        body='<section class="page-head"><div class="wrap"><h1>404</h1>'
+        body='<section class="page-head"><div class="wrap"><h1>Page not found</h1>'
              '<p class="lede">That page does not exist. '
-             '<a href="/">Back to the front page</a>.</p></div></section>',
+             '<a href="/">Back to the front page</a>, or '
+             '<a href="/work/">everything we have published</a>.</p>'
+             '</div></section>',
         path="/404.html")))
 
     shutil.copytree(SRC / "assets", ROOT / "assets", dirs_exist_ok=True)
