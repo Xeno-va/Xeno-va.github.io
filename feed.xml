@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Xenova Systems</title>
-  <link href="https://xeno-va.github.io"/>
-  <link rel="self" href="https://xeno-va.github.io/feed.xml"/>
-  <id>https://xeno-va.github.io</id>
-  <updated>2026-08-30T08:52:03Z</updated>
+  <link href="https://xenovasys.com"/>
+  <link rel="self" href="https://xenovasys.com/feed.xml"/>
+  <id>https://xenovasys.com</id>
+  <updated>2026-08-30T09:03:07Z</updated>
 
 </feed>

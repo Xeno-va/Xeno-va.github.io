@@ -5,6 +5,7 @@ services/index.html
 feed.xml
 sitemap.xml
 robots.txt
+CNAME
 .nojekyll
 404.html
 assets/mark.svg

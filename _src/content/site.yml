@@ -1,7 +1,7 @@
 name: Xenova Systems
 domain: xenovasys.com
-url: https://xeno-va.github.io
-custom_domain: false
+url: https://xenovasys.com
+custom_domain: true
 form_key: PLACEHOLDER-REPLACE-WITH-WEB3FORMS-KEY
 description: >-
   Hardware R&D and product engineering. Mechanical, electronics, firmware,
