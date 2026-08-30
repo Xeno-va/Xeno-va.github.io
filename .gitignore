@@ -5,3 +5,6 @@ __pycache__/
 # Original images keep their metadata. Only the stripped copies under images/
 # are ever committed or published.
 _src/images/
+
+# Old site content, kept locally, never published.
+_src/content/archive/
