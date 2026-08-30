@@ -386,3 +386,5 @@ blockquote {
 .dim { color: var(--ink-dim); }
 .repo { margin-top: 2.5rem; }
 .repo a { color: var(--accent); text-decoration: none; font-weight: 500; }
+
+.standfirst { font-size: 1.15rem; color: var(--ink-dim); margin: 0; max-width: 60ch; }

@@ -167,15 +167,15 @@ def home(site, posts):
     <p class="lede">{e(h['subtext'])}</p>
     <p class="actions">
       <a class="btn primary" href="/contact/">Make an enquiry</a>
-      <a class="btn" href="/approach/">How the work runs</a>
+      <a class="btn" href="/services/">What gets built</a>
     </p>
   </div>
 </section>
 
 <section class="band">
   <div class="wrap narrow">
-    <blockquote>{e(h['motto'])}</blockquote>
-    <p class="dim">{e(h['mission'])}</p>
+    <p class="standfirst">{e(h['summary'])}</p>
+    <p class="more"><a href="/services/">What gets built, and who it is for &rarr;</a></p>
   </div>
 </section>
 
