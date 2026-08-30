@@ -5,13 +5,14 @@ lede: From requirements to a manufacturable product, without handing your progra
 description: Hardware R&D and product engineering — electronics, mechanical, firmware, software and manufacturing, run end to end.
 ---
 
-Xenova Systems is a hardware R&D and product engineering company. We take
-systems from concept through to production: architecture, mechanical design,
-electronics, firmware, host software and manufacturing.
+We work across every layer a physical product needs — architecture, mechanical
+design, electronics, firmware, host software, and the manufacturing behind them
+— and we run all of it ourselves.
 
-Development runs in house. Design, fabrication, electronics assembly and test
-sit under one roof, which shortens the loop between a change and a tested part
-and keeps short production runs viable without a contract manufacturer.
+Design, fabrication, electronics assembly and test share one building. A change
+gets cut, built and measured the same day instead of going out to a vendor and
+coming back next week, and short production runs stay viable without clearing a
+contract manufacturer's minimums.
 
 ## Capabilities
 
@@ -27,7 +28,7 @@ LoRa, cellular, satellite and GNSS.
 Mechanism and linkage design, pneumatics, enclosures, fixtures and tooling.
 Design for long unattended deployment, including potting, sealing and material
 selection against environmental attack. Machining, laser cutting and additive
-manufacturing are done in house.
+manufacturing on site.
 
 ### Automation and motion control
 
@@ -74,7 +75,7 @@ experiment that would prove it is not.
 - Companies building physical products without an in-house engineering team
 - Research groups and universities needing instrumentation that does not exist commercially, or does not exist at a price the work can carry
 - Operators whose revenue depends on what a machine measures or reports
-- Deep-tech and frontier teams where the hard part of the problem is physical
+- Deep-tech teams whose hardest problem is a physical one
 
 ## Who we do not work with
 
@@ -88,4 +89,4 @@ Client work is confidential by default. Nothing about an engagement — the
 client, the product or the results — is published, referenced or shown without
 written approval. Everything published on this site is our own work.
 
-[Start a conversation.](/contact/)
+[Start a conversation](/contact/)

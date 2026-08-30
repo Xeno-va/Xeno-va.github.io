@@ -331,7 +331,7 @@ ENQUIRY_FORM = """
       </label>
 
       <label>
-        <span>What has to happen, and what constrains it?</span>
+        <span>What is it about?</span>
         <textarea name="message" rows="7" required
           placeholder="If it is a project: what the system has to do, where it has to do it, and what limits it. Anything else, just say what is on your mind."></textarea>
       </label>
@@ -473,7 +473,7 @@ def main():
 
     # 404
     written.append(write(ROOT / "404.html", shell(
-        site, title="Not found", description="Page not found.",
+        site, title="Page not found", description="Page not found.",
         body='<section class="page-head"><div class="wrap"><h1>Page not found</h1>'
              '<p class="lede">That page does not exist. '
              '<a href="/">Back to the front page</a>, or '
