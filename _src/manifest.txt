@@ -1,7 +1,7 @@
 index.html
 work/index.html
-approach/index.html
 contact/index.html
+services/index.html
 feed.xml
 sitemap.xml
 robots.txt
