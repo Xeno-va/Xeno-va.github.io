@@ -1,63 +1,58 @@
 ---
 title: Approach
 slug: approach
-description: How Xenova Systems chooses what to build and how it gets built.
+description: How work gets picked here, and how it gets built.
 ---
 
-Xenova Systems is a venture studio that builds its own hardware. Rather than
-taking a brief and executing it, the studio looks for technical constraints
-worth resolving, builds the system that resolves them, and carries it far enough
-to be manufactured, sold, or leased.
+One person builds the whole thing here: the board, the firmware, the software
+that talks to it, and the box it lives in. That's a hard ceiling on how much can
+be in flight at once. It's also why the interfaces between parts stay simple —
+there's nobody to negotiate them with.
 
-## Choosing what to build
+## Picking what to build
 
-The thing being searched for is not a product idea. It is **a technical
-constraint that several unrelated buyers are independently paying to work
-around**. One piece of physics with many markets behind it is worth more than
-one market with many competitors in it, because the platform that resolves the
-constraint retools across all of them.
+I'm not looking for product ideas. I'm looking for a technical constraint that
+several unrelated buyers are already paying to work around. A constraint with
+four markets behind it beats a market with four competitors in it, because
+whatever clears it retools across all four.
 
-Searching for stated needs finds solutions somebody else already chose, and puts
-you in a race on their terms.
+Most of that search runs unattended, overnight, against primary sources. What
+comes back is a ranked list with the evidence attached, and then I read.
 
-Candidates are surfaced at volume by machine, then killed cheaply and in order:
-what has already been patented, what has already been tried and failed, and
-finally the least expensive experiment that would prove the approach wrong.
-Nothing is committed to a design until that experiment has run.
+Candidates die cheapest-first: what's already patented, what's already been
+tried and failed, and then the least expensive experiment that would prove the
+idea wrong. Nothing gets designed until that experiment runs. Most things die at
+the second step, which is the point of putting it second.
 
-## Building it
+## Price
 
-**One person carries the whole stack** — board, firmware, host software, and the
-enclosure around them. That is a constraint, and it is also the point: the
-interfaces between subsystems get decided rather than negotiated, and no part of
-the system waits on a handoff.
+Field instruments in a lot of these areas run $400 to $4,000 each. A research
+group affords ten, half fail early, and a study that should have covered two
+hundred animals covers eighteen. The sample size ends up set by a price list
+rather than by the question being asked.
 
-**Cost is a design axis, not an outcome.** Incumbent instruments in most of these
-fields cost ten to a hundred times what the job actually requires, because they
-are specified to a category rather than to a task. Specifying to the task is
-frequently the entire product — a field study that could afford ten instruments
-and can now afford two hundred is a different study.
+Some of that cost is real — certification, low volume, having somebody to call.
+Not two orders of magnitude of it. Building to the task instead of to the
+category is usually where the entire product is.
 
-**Design for what is on the bench.** A part already in a drawer beats a
-marginally better one on a four-week lead time, and a measurement that cannot be
-made with the instruments on hand is not a verification plan.
+## Bench first
 
-## Proving it
+A part already in a drawer beats a better part four weeks out. A measurement
+that can't be made with the instruments in the room isn't a verification plan.
+Both of those sound obvious and both get broken constantly, usually with a
+datasheet open at the time.
 
-Every build carries the instrument that measures it. A pose estimate nothing
-acts on, a count nobody reconciles, a detection rate quoted from a bench rig —
-each can be plausible and wrong, and nobody would know. Closing a loop around a
-number is what converts it into evidence.
+## Proof
 
-Decisions that cost money, cannot be reversed, or that the operator will feel
-get written down against the purpose they serve and what they cost, at the
-moment they are made. Reconstructed afterwards, that is a justification rather
-than a check.
+Every build carries whatever measures it. A cycle count nobody reconciles, or a
+detection rate quoted off a bench rig, will sit there being wrong for a year.
+Closing a loop around a number is what turns it into evidence — a machine that
+repeatedly arrives at the same physical spot is doing something a plotted track
+can't fake.
 
-## What gets published
+## What gets written up
 
-Build logs and write-ups go up as they stand on their own, dead ends included —
-being wrong first and better later is the expected shape of the work, and a
-record that hides it is worth less.
+Anything that stands on its own, wrong turns included. The dead ends are the
+part I'd have wanted to read.
 
-Some systems are internal and stay that way.
+Some work is internal and stays that way.

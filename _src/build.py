@@ -57,6 +57,23 @@ def e(text):
     return html.escape(str(text or ""), quote=True)
 
 
+KINDS = {
+    "project": {"label": "Project", "dir": "projects"},
+    "lab note": {"label": "Lab note", "dir": "lab-notes"},
+}
+
+
+def kind_of(p):
+    k = (p.get("kind") or "project").strip().lower()
+    if k not in KINDS:
+        raise SystemExit(f"unknown kind {k!r} in {p['slug']} — use: {', '.join(KINDS)}")
+    return KINDS[k]
+
+
+def url_of(p):
+    return f"/{kind_of(p)['dir']}/{p['slug']}/"
+
+
 # hexagon with an inscribed X — inlined so it works without an extra request
 MARK = (
     '<svg class="mark" viewBox="0 0 32 32" aria-hidden="true" fill="none" '
@@ -130,71 +147,45 @@ def shell(site, *, title, description, body, path, extra_class=""):
 """
 
 
-def home(site, projects):
+def home(site, posts):
     h = site["home"]
-    cards = "\n".join(
-        f"""      <article class="card">
-        <h3>{e(c['title'])}</h3>
-        <p>{e(c['text'])}</p>
-      </article>"""
-        for c in h["capabilities"]
-    )
-    if projects:
+    if posts:
         work_band = f"""<section class="band alt">
   <div class="wrap">
-    <h2 class="eyebrow">Recent work</h2>
+    <h2 class="eyebrow">Recent</h2>
     <div class="teasers">
-{chr(10).join(project_teaser(p) for p in projects[:3])}
+{chr(10).join(teaser(p) for p in posts[:3])}
     </div>
-    <p class="more"><a href="/projects/">Everything published &rarr;</a></p>
+    <p class="more"><a href="/work/">Everything published &rarr;</a></p>
   </div>
 </section>"""
     else:
         work_band = ""
-    audience = "\n".join(f"        <li>{e(a)}</li>" for a in h["audience"])
     return f"""<section class="hero">
   <div class="wrap">
     <h1>{e(h['headline'])}</h1>
     <p class="lede">{e(h['subtext'])}</p>
     <p class="actions">
-      <a class="btn primary" href="/contact/">Start a project</a>
-      <a class="btn" href="/projects/">See how we work</a>
+      <a class="btn primary" href="/contact/">Make an enquiry</a>
+      <a class="btn" href="/approach/">How the work runs</a>
     </p>
   </div>
 </section>
 
 <section class="band">
-  <div class="wrap">
-    <h2 class="eyebrow">How the work runs</h2>
-    <div class="cards">
-{cards}
-    </div>
+  <div class="wrap narrow">
+    <blockquote>{e(h['motto'])}</blockquote>
+    <p class="dim">{e(h['mission'])}</p>
   </div>
 </section>
 
 {work_band}
-
-<section class="band">
-  <div class="wrap split">
-    <div>
-      <h2 class="eyebrow">Where the work lands</h2>
-      <ul class="ticks">
-{audience}
-      </ul>
-    </div>
-    <div>
-      <h2 class="eyebrow">The standing rule</h2>
-      <blockquote>{e(h['motto'])}</blockquote>
-      <p>{e(h['mission'])}</p>
-    </div>
-  </div>
-</section>
 """
 
 
-def project_teaser(p):
-    tag = f'<span class="kind">{e(p["kind"])}</span>' if p.get("kind") else ""
-    return f"""      <a class="teaser" href="/projects/{e(p['slug'])}/">
+def teaser(p):
+    tag = f'<span class="kind">{e(kind_of(p)["label"])}</span>'
+    return f"""      <a class="teaser" href="{e(url_of(p))}">
         <div class="teaser-meta">{tag}<time datetime="{iso(p['date'])}">{fmt_date(p['date'])}</time></div>
         <h3>{e(p['title'])}</h3>
         <p>{e(p.get('summary', ''))}</p>
@@ -205,7 +196,7 @@ def project_teaser(p):
 def projects_index(site, projects):
     if projects:
         inner = f"""    <div class="teasers">
-{chr(10).join(project_teaser(p) for p in projects)}
+{chr(10).join(teaser(p) for p in projects)}
     </div>"""
     else:
         inner = """    <div class="empty">
@@ -217,7 +208,7 @@ def projects_index(site, projects):
     return f"""<section class="page-head">
   <div class="wrap">
     <h1>Work</h1>
-    <p class="lede">Build logs and write-ups — including the routes that did not work out.</p>
+    <p class="lede">Finished builds and lab notes, newest first — including the routes that did not work out.</p>
   </div>
 </section>
 <section class="band">
@@ -230,8 +221,10 @@ def projects_index(site, projects):
 
 def project_page(site, p):
     body = render_md(p["body"])
-    tag = f'<span class="kind">{e(p["kind"])}</span>' if p.get("kind") else ""
+    tag = f'<span class="kind">{e(kind_of(p)["label"])}</span>'
     status = f'<span class="status">{e(p["status"])}</span>' if p.get("status") else ""
+    repo = (f'<p class="repo"><a href="{e(p["repo"])}">Code and key files &rarr;</a></p>'
+            if p.get("repo") else "")
     return f"""<article class="doc">
   <div class="wrap narrow">
     <div class="doc-meta">{tag}{status}<time datetime="{iso(p['date'])}">{fmt_date(p['date'])}</time></div>
@@ -239,7 +232,8 @@ def project_page(site, p):
     <div class="prose">
 {body}
     </div>
-    <p class="back"><a href="/projects/">&larr; All work</a></p>
+{repo}
+    <p class="back"><a href="/work/">&larr; All work</a></p>
   </div>
 </article>
 """
@@ -314,7 +308,7 @@ def atom(site, projects):
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     entries = []
     for p in projects:
-        url = f"{site['url'].rstrip('/')}/projects/{p['slug']}/"
+        url = site['url'].rstrip('/') + url_of(p)
         entries.append(f"""  <entry>
     <title>{e(p['title'])}</title>
     <link href="{e(url)}"/>
@@ -360,7 +354,7 @@ def main():
     site = yaml.safe_load((CONTENT / "site.yml").read_text(encoding="utf-8"))
 
     projects = sorted(
-        (load_doc(f) for f in (CONTENT / "projects").glob("*.md")),
+        (load_doc(f) for f in (CONTENT / "posts").glob("*.md")),
         key=lambda p: iso(p["date"]),
         reverse=True,
     )
@@ -388,17 +382,18 @@ def main():
         site, title=site["name"], description=site["description"],
         body=home(site, projects), path="/", extra_class="home")))
 
-    written.append(write(ROOT / "projects/index.html", shell(
-        site, title="Projects & notes",
-        description="Build logs and research write-ups from Xenova Systems.",
-        body=projects_index(site, projects), path="/projects/")))
-    paths.append("/projects/")
+    written.append(write(ROOT / "work/index.html", shell(
+        site, title="Work",
+        description="Finished builds and lab notes.",
+        body=projects_index(site, projects), path="/work/")))
+    paths.append("/work/")
 
     for p in projects:
-        written.append(write(ROOT / f"projects/{p['slug']}/index.html", shell(
+        u = url_of(p)
+        written.append(write(ROOT / f"{u.strip('/')}/index.html", shell(
             site, title=p["title"], description=p.get("summary", ""),
-            body=project_page(site, p), path=f"/projects/{p['slug']}/")))
-        paths.append(f"/projects/{p['slug']}/")
+            body=project_page(site, p), path=u)))
+        paths.append(u)
 
     for pg in pages:
         written.append(write(ROOT / f"{pg['slug']}/index.html", shell(

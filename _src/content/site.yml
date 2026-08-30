@@ -9,7 +9,7 @@ description: >-
   product that clears it.
 
 nav:
-  - { label: Work, href: /projects/ }
+  - { label: Work, href: /work/ }
   - { label: Approach, href: /approach/ }
   - { label: Contact, href: /contact/ }
 

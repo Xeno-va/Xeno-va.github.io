@@ -382,3 +382,7 @@ blockquote {
 .enquiry button { justify-self: start; cursor: pointer; font: inherit; margin-top: .4rem; }
 .enquiry .formnote { margin: 0; font-size: .85rem; color: var(--ink-faint); }
 .enquiry .hp { position: absolute; left: -9999px; }
+
+.dim { color: var(--ink-dim); }
+.repo { margin-top: 2.5rem; }
+.repo a { color: var(--accent); text-decoration: none; font-weight: 500; }

@@ -1,5 +1,5 @@
 index.html
-projects/index.html
+work/index.html
 approach/index.html
 contact/index.html
 feed.xml
