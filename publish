@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Rebuild the site and push it live. Usage: ./publish ["commit message"]
+set -euo pipefail
+cd "$(dirname "$0")"
+
+if [ ! -x .venv/bin/python ]; then
+  uv venv .venv
+  VIRTUAL_ENV="$PWD/.venv" uv pip install markdown pyyaml
+fi
+
+./.venv/bin/python _src/build.py
+
+if [ -z "$(git status --porcelain)" ]; then
+  echo "nothing changed"
+  exit 0
+fi
+
+git add -A
+git commit -m "${1:-update site}"
+git push
+echo "pushed — live in about a minute at https://xenovasys.com/"

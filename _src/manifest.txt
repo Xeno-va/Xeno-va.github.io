@@ -1,0 +1,11 @@
+index.html
+projects/index.html
+approach/index.html
+contact/index.html
+feed.xml
+sitemap.xml
+robots.txt
+.nojekyll
+404.html
+assets/mark.svg
+assets/style.css

@@ -1,0 +1,53 @@
+name: Xenova Systems
+domain: xenovasys.com
+url: https://xeno-va.github.io
+custom_domain: false
+form_key: PLACEHOLDER-REPLACE-WITH-WEB3FORMS-KEY
+description: >-
+  An independent venture studio with a workshop attached. Hardware, firmware and
+  software built end to end, from the constraint that makes a market to the
+  product that clears it.
+
+nav:
+  - { label: Work, href: /projects/ }
+  - { label: Approach, href: /approach/ }
+  - { label: Contact, href: /contact/ }
+
+home:
+  headline: A venture studio with a workshop attached
+  subtext: >-
+    Hardware, firmware and software built end to end by one engineer — from the
+    constraint that makes a market to the product that clears it.
+
+  capabilities:
+    - title: Find the constraint, not the idea
+      text: >-
+        The search is for one piece of physics that several unrelated buyers are
+        already paying to work around. One constraint with many markets behind it
+        beats one market with many competitors in it.
+    - title: Build the whole stack
+      text: >-
+        Board, firmware and host software designed together by one person.
+        Interfaces get decided rather than negotiated, and nothing waits on a
+        handoff between teams.
+    - title: Cost is a design axis
+      text: >-
+        Incumbent instruments routinely cost ten to a hundred times what the job
+        actually requires. Specifying to the job instead of to the category is
+        often the entire product.
+    - title: Prove it, then claim it
+      text: >-
+        Every build carries the instrument that measures it. A number nothing
+        acts on can be plausible and wrong, and nobody would ever know.
+
+  audience:
+    - Instruments that have to survive unattended, for months, with nobody visiting
+    - Machines whose output is the invoice — where the count has to be believed
+    - Autonomy and control on real hardware, with real latency and real backlash
+    - Internal tooling for teams who are not programmers and should not have to be
+
+  motto: Problem-driven. Evidence over claims. Priced to be bought.
+  mission: >-
+    Every decision is written down against the purpose it serves and what it
+    costs — including the ones that turned out wrong. That record is part of the
+    output, not a byproduct of it.
