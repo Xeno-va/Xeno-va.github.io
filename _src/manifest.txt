@@ -1,5 +1,6 @@
 index.html
 work/index.html
+tools/index.html
 contact/index.html
 services/index.html
 thanks/index.html

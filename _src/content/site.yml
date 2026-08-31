@@ -9,6 +9,7 @@ description: >-
 
 nav:
   - { label: Work, href: /work/ }
+  - { label: Tools, href: /tools/ }
   - { label: Services, href: /services/ }
   - { label: Contact, href: /contact/ }
 

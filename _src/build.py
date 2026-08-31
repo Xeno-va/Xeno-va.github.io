@@ -249,6 +249,48 @@ def teaser(p):
       </a>"""
 
 
+def tool_card(t):
+    kind = f'<span class="kind">{e(t["kind"])}</span>' if t.get("kind") else ""
+    status = f'<span class="status">{e(t["status"])}</span>' if t.get("status") else ""
+    repo = (f'<a class="src" href="{e(t["repo"])}">Source</a>'
+            if t.get("repo") else "")
+    return f"""      <div class="teaser tool">
+        <div class="teaser-meta">{kind}{status}</div>
+        <h3><a href="{e(t['url'])}">{e(t['title'])}</a></h3>
+        <p>{e(t.get('summary', ''))}</p>
+        <div class="tool-links">
+          <a class="go" href="{e(t['url'])}">Open the tool &rarr;</a>
+          {repo}
+        </div>
+      </div>"""
+
+
+def tools_index(site, tools):
+    if tools:
+        inner = f"""    <div class="teasers">
+{chr(10).join(tool_card(t) for t in tools)}
+    </div>"""
+    else:
+        inner = """    <div class="empty">
+      <p>Nothing here yet.</p>
+      <p>Calculators and design tools built for our own work end up here once
+      they are good enough to hand to somebody else.</p>
+      <p><a href="/contact/">Ask what we are building &rarr;</a></p>
+    </div>"""
+    return f"""<section class="page-head">
+  <div class="wrap">
+    <h1>Tools</h1>
+    <p class="lede">Calculators and design tools that run in the browser. Free, no account, nothing stored.</p>
+  </div>
+</section>
+<section class="band">
+  <div class="wrap narrow">
+{inner}
+  </div>
+</section>
+"""
+
+
 def projects_index(site, projects):
     if projects:
         inner = f"""    <div class="teasers">
@@ -422,6 +464,16 @@ def main():
     )
     pages = [load_doc(f) for f in sorted((CONTENT / "pages").glob("*.md"))]
 
+    tools_dir = CONTENT / "tools"
+    tools = sorted(
+        (load_doc(f) for f in tools_dir.glob("*.md")),
+        key=lambda t: iso(t["date"]),
+        reverse=True,
+    ) if tools_dir.exists() else []
+    for t_ in tools:
+        if not t_.get("url"):
+            raise SystemExit(f"tool {t_['slug']} has no url")
+
     # remove everything the previous build wrote, so renamed or deleted
     # content cannot leave an orphaned page live on the site
     manifest = SRC / "manifest.txt"
@@ -449,6 +501,12 @@ def main():
         description="Finished builds and lab notes.",
         body=projects_index(site, projects), path="/work/")))
     paths.append("/work/")
+
+    written.append(write(ROOT / "tools/index.html", shell(
+        site, title="Tools",
+        description="Browser-based calculators and design tools, free to use.",
+        body=tools_index(site, tools), path="/tools/")))
+    paths.append("/tools/")
 
     for p in projects:
         u = url_of(p)
@@ -503,7 +561,7 @@ def main():
         "\n".join(str(w.relative_to(ROOT)) for w in written if w.is_file()) + "\n")
 
     print(f"built {len(written)} files, {len(projects)} posts, {len(pages)} pages, "
-          f"{n_img} images stripped and audited clean")
+          f"{len(tools)} tools, {n_img} images stripped and audited clean")
     for w in written:
         print("  ", w.relative_to(ROOT))
     return 0
