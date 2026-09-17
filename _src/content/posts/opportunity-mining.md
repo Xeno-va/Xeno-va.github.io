@@ -14,7 +14,7 @@ summary: >-
 
 Xenova Systems. Working paper, September 2026.
 
-*Provenance note.* This manuscript was drafted by a Claude agent from the project's design records, decision logs, and test-run data, and edited by the author. Not every citation has been checked against the original source; the reference list is provided so that readers can. The corpus sizes and findings reported near the end are the project's own.
+*Provenance note.* Written by the author; edited with an AI agent working over the project's own records, which sourced the citations and figures. Not every citation has been checked against the original source; the reference list is provided so that readers can. Corpus sizes and findings are the project's own.
 
 ---
 
