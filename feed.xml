@@ -4,6 +4,12 @@
   <link href="https://xenovasys.com"/>
   <link rel="self" href="https://xenovasys.com/feed.xml"/>
   <id>https://xenovasys.com</id>
-  <updated>2026-08-31T07:03:42Z</updated>
-
+  <updated>2026-09-17T03:41:14Z</updated>
+  <entry>
+    <title>Opportunity Mining at Corpus Scale: Reading Public Technical Data to Do the Homework Behind a Technical Bet</title>
+    <link href="https://xenovasys.com/lab-notes/opportunity-mining/"/>
+    <id>https://xenovasys.com/lab-notes/opportunity-mining/</id>
+    <updated>2026-09-16T00:00:00Z</updated>
+    <summary>Most products fail on a problem that could have been checked first. This working paper argues that a large part of that checking is information work over public record, and reports what four assembled corpora — funding solicitations, scientific abstracts, patents and datasheets — can already answer, with two worked examples.</summary>
+  </entry>
 </feed>

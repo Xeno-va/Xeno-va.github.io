@@ -1,6 +1,7 @@
 index.html
 work/index.html
 tools/index.html
+lab-notes/opportunity-mining/index.html
 contact/index.html
 services/index.html
 thanks/index.html
@@ -12,3 +13,4 @@ CNAME
 404.html
 assets/mark.svg
 assets/style.css
+images/fto-diagram.png
